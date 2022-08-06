@@ -1,0 +1,54 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://sprites/enemyShipRed/Enemy_Ship.png" type="Texture" id=1]
+[ext_resource path="res://sprites/enemyShipRed/enemyShip1_muzzle_0.png" type="Texture" id=2]
+[ext_resource path="res://sprites/enemyShipRed/enemyShip1_muzzle_1.png" type="Texture" id=3]
+[ext_resource path="res://sprites/enemyShipRed/enemyShip1_rocket_0.png" type="Texture" id=4]
+[ext_resource path="res://sprites/enemyShipRed/enemyShip1_rocket_1.png" type="Texture" id=5]
+[ext_resource path="res://scripts/scene_enemyShipRed.gdns" type="Script" id=6]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 30.0
+} ]
+
+[node name="Red-Enemy-Ship" type="Node"]
+script = ExtResource( 6 )
+
+[node name="Body-Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+flip_v = true
+
+[node name="Muzzle" type="Node2D" parent="."]
+
+[node name="left-muzzle-anim" type="AnimatedSprite" parent="Muzzle"]
+position = Vector2( -25, 23 )
+frames = SubResource( 1 )
+frame = 1
+playing = true
+flip_v = true
+
+[node name="right-muzzle-anim" type="AnimatedSprite" parent="Muzzle"]
+position = Vector2( 25, 23 )
+frames = SubResource( 1 )
+playing = true
+flip_v = true
+
+[node name="Rocket" type="Node2D" parent="."]
+
+[node name="rocket-anim" type="AnimatedSprite" parent="Rocket"]
+position = Vector2( 0, -33 )
+frames = SubResource( 2 )
+playing = true
+flip_v = true

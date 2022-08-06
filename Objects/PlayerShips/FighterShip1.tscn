@@ -49,6 +49,7 @@ shape = SubResource( 1 )
 position = Vector2( 0, 31 )
 frames = SubResource( 2 )
 animation = "rocket"
+frame = 7
 playing = true
 
 [node name="muzzleAnimation" type="AnimatedSprite" parent="KinematicBody2D"]
